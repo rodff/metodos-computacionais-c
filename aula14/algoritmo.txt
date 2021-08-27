@@ -1,0 +1,47 @@
+imports
+
+Class Particula():
+
+	def __init__(self,ident,x,y,vx,vy):
+		self.x = x
+		self.y = y
+		...
+
+	def evolve(dt):
+		self.x+=self.x+self.vx*dt		
+		self.y+=self.y+self.vy*dt
+
+	def contour():
+		if(self.x<0):
+			self.vx=abs(self.vx)
+		if(self.x>Lx):
+			self.vx=-abs(self.vx)
+		... (Repete par y)
+
+==========================================================
+
+Programa Principal:
+
+import numpy as np
+
+N = 100		# Number of particles
+Lx = 100	# Size of the x side
+Ly = 100	# Size of the y size
+
+rndx = np.random.rand(N)*Lx
+rndy = np.random.rand(N)*Ly 
+rndvx = np.random.normal(mean,sigma,N)
+rndvy = np.random.normal(mean,sigma,N)
+
+'''
+part = []
+for i in range(N):
+	part.append(Particula(i,rndx[i],rndy[i],rndvx[i],rndvy[i])
+'''
+
+part = list(Particula(i,rndx[i],rndy[i],rndvx[i],rndvy[i]) for i in range(N))
+
+# Evolution
+while t<tmax:
+	list(map(lambda:i.evolve(dt),part))
+	list(map(lambda:i.contour(),part))

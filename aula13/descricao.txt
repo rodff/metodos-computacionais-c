@@ -1,0 +1,1 @@
+Programa da equacao de Schrodinger por metodo espectral.
